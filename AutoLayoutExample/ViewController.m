@@ -48,6 +48,32 @@
     
   // label using NSLayoutConstraint
 #warning - type "demo_step_2"
+    self.subtitleLabelCentered = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.subtitleLabelCentered.text = @"Centered Label using classic NSLayoutConstraints";
+    self.subtitleLabelCentered.textColor = [UIColor redColor];
+    self.subtitleLabelCentered.backgroundColor = [UIColor grayColor];
+    self.subtitleLabelCentered.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.subtitleLabelCentered];
+    
+    
+    
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.subtitleLabelCentered
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.0
+                                                           constant:10]];
+    self.topConstraint = [NSLayoutConstraint constraintWithItem:self.subtitleLabelCentered
+                                                      attribute:NSLayoutAttributeTop
+                                                      relatedBy:NSLayoutRelationEqual
+                                                         toItem:subtitleLabel
+                                                      attribute:NSLayoutAttributeBottom
+                                                     multiplier:1.0
+                                                       constant:0];
+    self.topConstraint.priority = 600.0f;
+    [self.view addConstraint:self.topConstraint];
 
   // label using anchors
 #warning - type "demo_step_3"
@@ -64,6 +90,8 @@
                                                                                                   constant:30.0];
     topAnchorConstraint.active = YES;
 
+    /// comment for aditional commit
+    /// comment for the second commit
 }
 
 - (void)viewDidAppear:(BOOL)animated {
