@@ -25,6 +25,26 @@
   
   // label using VLF
 #warning - type "demo_step_1"
+    UILabel *subtitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    subtitleLabel.text = @"Left aligned label using constraints and code";
+    subtitleLabel.textColor = [UIColor redColor];
+    subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:subtitleLabel];
+    
+    
+    
+    
+    NSDictionary *viewsDictionary = @{@"subtitle" : subtitleLabel};
+    NSArray *vlfHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-230-[subtitle]"
+                                                                               options:0
+                                                                               metrics:nil
+                                                                                 views:viewsDictionary];
+    [NSLayoutConstraint activateConstraints:vlfHorizontalConstraint];
+    NSArray *vlfVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-160-[subtitle]"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDictionary];
+    [NSLayoutConstraint activateConstraints:vlfVerticalConstraint];
     
   // label using NSLayoutConstraint
 #warning - type "demo_step_2"
