@@ -28,7 +28,7 @@
     UILabel *subtitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     subtitleLabel.text = @"Left aligned label using constraints and code";
     subtitleLabel.textColor = [UIColor blackColor];
-    subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:subtitleLabel];
     
     
