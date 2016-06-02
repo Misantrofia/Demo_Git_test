@@ -51,6 +51,18 @@
 
   // label using anchors
 #warning - type "demo_step_3"
+    
+    self.anchorsLabelCentered = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.anchorsLabelCentered.text = @"Centered Label using anchors";
+    self.anchorsLabelCentered.textColor = [UIColor grayColor];
+    self.anchorsLabelCentered.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.anchorsLabelCentered];
+    NSLayoutConstraint *centerAnchorConstraint = [self.anchorsLabelCentered.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor
+                                                                                                         constant:0.0];
+    centerAnchorConstraint.active = YES;
+    NSLayoutConstraint *topAnchorConstraint = [self.anchorsLabelCentered.topAnchor constraintEqualToAnchor:self.subtitleLabelCentered.bottomAnchor
+                                                                                                  constant:30.0];
+    topAnchorConstraint.active = YES;
 
 }
 
